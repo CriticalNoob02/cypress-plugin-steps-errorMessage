@@ -9,6 +9,11 @@ beforeEach(function () {
 
 Cypress.on('fail', (err) => {
   console.log(err)
-  err.message += `${'\n\n' + 'Error:\n\n'}${window.errorText.pop()}\n\n`;
+  if(!window.errorText.length){
+    err.message += `${'\n\n' + 'Test steps were:\n\n'}${window.testFlow.join('\n')}`;
+  }
+  else{
+    err.message += `${'\n\n' + 'Error:\n\n'}${window.errorText.pop()}\n\n`;
+  }
   throw err;
 });

@@ -2,6 +2,6 @@ export const errorMessage = (message: string) => {
 
     const logMessage = `- ${message}`;
 
-    window.errorText.push(logMessage);  
+    window.errorText.push(logMessage) 
   }
   
