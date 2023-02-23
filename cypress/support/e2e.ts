@@ -1,1 +1,1 @@
-import '../../dist/index'
+import '../../src/index'
