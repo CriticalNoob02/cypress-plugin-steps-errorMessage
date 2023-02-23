@@ -19,4 +19,10 @@ it('numbers test steps', () => {
   cy.step('select indigo')
   cy.get('.indigo')
 
+  cy.errorMessage('Different color of orange')
+  cy.get('.orange')
+    .should('have.css','background-color', 'rgb(255, 165, 0)')
+  cy.errorMessage('Color other than red')
+  cy.get('.red')
+  .should('have.css','background-color', 'rgb(0, 0, 0)')
 });
