@@ -17,10 +17,19 @@ declare global {
        * cy.section('dashboard section')
        */
       section(message: string): Chainable<null>;
+
+      /**
+      * Adds erro massage to your test flow.
+      * @param message
+      * @example
+      * cy.errorMessage('dashboard empty')
+      */
+      errorMessage(message: string): Chainable<null>;
     }
   }
   interface Window {
     logCalls: number;
     testFlow: string[];
+    errorText: string[];
   }
 }
